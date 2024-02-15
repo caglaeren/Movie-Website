@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film İzleyelim</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="lightslider.css"/>
+    <script src="js/JQuery3.3.1.js"></script>
+    <script src="js/lightslider.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-e7a1U+OqAPdUO0/6doQ9FouUUBKS09Bb2QaT4+E9Itb4dIS/P9I8l+1M/PCaI10V" crossorigin="anonymous">
+
+    <!-- Poppins Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap">
+
+    <link rel="shortcut icon" href="images/infinitylogo.jpg"/>
+
+    <script src="https://kit.fontawesome.com/83c5707417.js" crossorigin="anonymous"></script>
+   
+
+    <style>
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+            background: #a0b4e8;
+            padding: 10px;
+            border-radius:18px 18px;
+            border: 2px solid #dddddd; 
+            
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <!---nav bar kısmı----->
+    <nav>
+        <!--logo image yapalım-->
+        <a href="#" class="logo">
+            <img src="images/infinixxlogosu.jpg"/>
+        </a>
+        <!--menu bar kısmı-->
+        <ul class="menu">
+            <li>
+                <a href="#" >Anasayfa</a>
+            </li>
+            <li>
+                <a href="#latest" >Son Çıkanlar</a>
+            </li>
+            <li>
+                <a href="#filmler" >Filmler</a>
+            </li>
+            
+        </ul>
+        <!--search arama butonu-->
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="İzlemek istediğin filmi bul"/>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </nav>
+
+    <section id="main">
+        <h1 class="showcase-heading">Popülerler</h1>
+        <ul id="autoWidth" class="cs-hidden lightSlider">
+            <!--kutu 1-->
+            <li class="item-a">
+                <div class="showcase-box">
+                    <img src="images/quiteplace.jpg"/>
+                </div>
+            </li>
+
+            <!--kutu 2-->
+            <li class="item-b">
+                <div class="showcase-box">
+                    <img src="images/starwars.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-c">
+                <div class="showcase-box">
+                    <img src="images/readyplayeroneshowcase.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-d">
+                <div class="showcase-box">
+                    <img src="images/beautyandbeastshowcase.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-e">
+                <div class="showcase-box">
+                    <img src="images/narniaprincecaspian.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-f">
+                <div class="showcase-box">
+                    <img src="images/frozenelsaanna.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-g">
+                <div class="showcase-box">
+                    <img src="images/zootopiaaa.png"/>
+                </div>
+            </li>
+
+            <li class="item-s">
+                <div class="showcase-box">
+                    <img src="images/umudunu-kaybetme.png"/>
+                </div>
+            </li>
+            
+
+            <li class="item-h">
+                <div class="showcase-box">
+                    <img src="images/twilightshow.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-i">
+                <div class="showcase-box">
+                    <img src="images/oppenhaimershow.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-j">
+                <div class="showcase-box">
+                    <img src="images/harry-potter-film-serisi-sirasi-940x510.jpg"/>
+                </div>
+            </li>
+            <li class="item-k">
+                <div class="showcase-box">
+                    <img src="images/Harry_Potter_and_the_Philosopher's_Stone_banner.jpg"/>
+                </div>
+            </li>
+          
+            <li class="item-l">
+                <div class="showcase-box">
+                    <img src="images/catchingfire.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-l">
+                <div class="showcase-box">
+                    <img src="images/aile-arasinda-kapak.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-m">
+                <div class="showcase-box">
+                    <img src="images/menushow.png"/>
+                </div>
+            </li>
+
+            <li class="item-n">
+                <div class="showcase-box">
+                    <img src="images/walle.png"/>
+                </div>
+            </li>
+
+            <li class="item-o">
+                <div class="showcase-box">
+                    <img src="images/EncantoFB.jpeg"/>
+                </div>
+            </li>
+
+            <li class="item-p">
+                <div class="showcase-box">
+                    <img src="images/quiteplace.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-r">
+                <div class="showcase-box">
+                    <img src="images/wonka.jpeg"/>
+                </div>
+            </li>
+       
+            <li class="item-t">
+                <div class="showcase-box">
+                    <img src="images/lordoftheringsshowcase.jpg"/>
+                </div>
+            </li>
+
+            <li class="item-u">
+                <div class="showcase-box">
+                    <img src="images/blackswan.jpg"/>
+                </div>
+            </li>
+            
+        </ul>
+
+    </section>
+    
+    <section id="latest">
+        <h2 class="latest-heading">En Son Çıkan Filmleri Keşfedelim</h2>
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden lightSlider">
+            <!--slide-box-1------------------>
+            <li class="item-a">
+                <div class="latest-box">
+                    <!--img-------->
+                    <div class="latest-b-img">
+                        <img src="images/karmakarisıkposter.jpeg">
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>Karmakarışık</strong>
+                        <p>Animasyon,Aile</p>
+                    </div>
+                </div>
+            </li>
+    <!--slide-box-2------------------>
+    <li class="item-b">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/bluebeetle.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Blue Beetle </strong>
+                <p>Aksyion, Bilim Kurgu</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-3------------------>
+    <li class="item-c">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/barbiemovie.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Barbie</strong>
+                <p>Fantastik,Komedi</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-4------------------>
+    <li class="item-d">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/thelocknesshorror.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>The Loch Ness Horror</strong>
+                <p>Bilim Kurgu,Korku</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-5------------------>
+    <li class="item-e">
+        <div class="latest-box">
+       
+            <div class="latest-b-img">
+                <img src="images/homealone.jpg">
+            </div>
+    
+            <div class="latest-b-text">
+                <strong>Evde Tek Başına</strong>
+                <p>Aile,Komedi</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-6------------------>
+    <li class="item-f">
+        <div class="latest-box">
+ 
+            <div class="latest-b-img">
+                <img src="images/yildiz-tozu.jpg">
+            </div>
+  
+            <div class="latest-b-text">
+                <strong>Yıldız Tozu</strong>
+                <p>Macera,Fantastik</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-7------------------>
+    <li class="item-g">
+        <div class="latest-box">
+      
+            <div class="latest-b-img">
+                <img src="images/alis-harikalar-diyarinda.jpg">
+            </div>
+           
+            <div class="latest-b-text">
+                <strong>Alice Harikalar Diyarında</strong>
+                <p>Aile,Fantastik</p>
+            </div>
+        </div>
+    </li>
+
+     <!--slide-box-8------------------>
+     <li class="item-h">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/fullhd-alis-harikalar-diyarinda-aynanin-icinden.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Alice Harikalar Diyarında 2: Aynanın İçinden</strong>
+                <p>Aile,Fantastik</p>
+            </div>
+        </div>
+    </li>
+
+    <li class="item-i">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/Güneşi_Gördüm_film_Afişi.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Güneşi Gördüm</strong>
+                <p>Dram</p>
+            </div>
+        </div>
+        </li>
+
+     <!--slide-box-9------------------>
+     <li class="item-j">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/hobbit1-beklenmedikyolculuk.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Hobbit 1: Beklenmedik Yolculuk</strong>
+                <p>Macera, Fantastik</p>
+            </div>
+        </div>
+    </li>
+     <!--slide-box-10------------------>
+     <li class="item-k">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/Hobbit2-thedesolationofsmaug.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Hobbit 2: Smaug'un Çorak Toprakları</strong>
+                <p>Macera, Fantastik</p>
+            </div>
+        </div>
+    </li>
+     <!--slide-box-11------------------>
+     <li class="item-l">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/hobbit3-besordununsavasi.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Hobbit 3: Beş Ordunun Savaşı</strong>
+                <p>Macera, Fantastik</p>
+            </div>
+        </div>
+    </li>
+    <!-------------12-->
+    <li class="item-m">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/lalaland.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Lala Land</strong>
+                <p>Romantik</p>
+            </div>
+        </div>
+    </li>
+    <li class="item-n">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/sadecesen.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Sadece Sen</strong>
+                <p>Romantik, Aksiyon</p>
+            </div>
+        </div>
+    </li>
+
+    <li class="item-o">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/gangubai.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Gangubai Kathiawadi</strong>
+                <p>Suç,Dram</p>
+            </div>
+        </div>
+    </li>
+    <li class="item-p">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/prideandprejudice.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Aşk ve Gurur</strong>
+                <p>Romantik,Dram</p>
+            </div>
+        </div>
+    </li>
+    <li class="item-q">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/elemental.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Elemental: Doğanın Güçleri</strong>
+                <p>Romantik,Fantastik</p>
+            </div>
+        </div>
+    </li>
+
+    <li class="item-q">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/themenu.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>The Menu</strong>
+                <p>Korku, Gerilim</p>
+            </div>
+        </div>
+    </li>
+
+    
+    <li class="item-r">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/charliecikolata.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Charlie'nin Çikolata Fabrkiası </strong>
+                <p>Fantastik, Çocuk</p>
+            </div>
+        </div>
+    </li>
+
+    <li class="item-s">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/14peaks.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>14 Zirve: Hiçbir Şey İmkânsız Değildir </strong>
+                <p>Belgesel, Spor</p>
+            </div>
+        </div>
+    </li>
+    
+    <li class="item-t">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img">
+                <img src="images/parasite.jpg">
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Parazit </strong>
+                <p>Gerilim, Komedi</p>
+            </div>
+        </div>
+    </li>
+    
+
+    </ul>
+ 
+    </section>
+    
+    
+
+    <!---filmler html sayfası-->
+   <!-- Pop-up Container -->
+   <div id="popupContent" class="popup-container" style="display:none;">
+    <span class="x-icon" onclick="closePopup()"><i class="fa-solid fa-square-xmark"></i></span>
+    <div class="content">
+      
+        <div class="left">
+            <div class="poster-img">
+                <img id="popupPoster" src="" alt="">
+            </div>
+            <div class="single-info">
+                <span class="addfavourite">Favorilere Ekleyin:</span>
+                <span class="star-icon" onclick="toggleStar()"><i class="fa-solid fa-star"></i></span>
+            </div>
+        </div>
+
+
+
+        <div class="right">
+            <h1 id="popupTitle"></h1>
+            <h3 id="popupTagline"></h3>
+            <div id="popupInfoContainer" class="single-info-container"></div>
+            <div id="popupGenres" class="genres">
+                <h3>Türü</h3>
+                <ul></ul>
+
+            </div>
+            <div class="director">
+                <h3>Yönetmen</h3>
+                <p id="popupDirector"></p>
+            </div>
+         
+
+            <div class="overview">
+                <h3>Konusu</h3>
+                <p id="popupOverview"></p>
+            </div>
+            
+        </div>
+       
+    </div>
+</div>
+
+<!-- Filmler HTML -->
+<section id="filmler">
+    <div class="movies-heading">
+        <h2>Filmlere Bakalım</h2>
+    </div>
+
+    <section id="film-list">
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/bluebeetle.jpg" onclick="openPopup(
+                'Blue Beetle',
+                'images/bluebeetle.jpg',
+                'Ergenlik çağına yeni adım atmış olan Jamie Reyes, okul çıkışında en iyi arkadaşları Paco ve Brenda ile birlikte evlerine dönerler. Yolda ilerlerken tuhaf bir şekilde karşılaşılan alışılmadık bir böcekle karşılaşırlar. Bu böcek, normalden farklı olarak garip bir araziye gömülü halde bulunur. Reyes, bu durum karşısında büyük bir merak duyar ve böceği daha yakından incelemek amacıyla eve götürmeye karar verir. Ancak gece olunca, beklenmedik bir olay gerçekleşir. İncelenmeye alınan böcek, canlanır ve Jamie Reyes\'in omurgasına yapışır. Bu beklenmedik durum sonucunda Jamie, sahip olduğu dönüştürülebilir kostüm sayesinde inanılmaz bir hız ve güç kazanır. Bu kostüm, Jamie\'nin sadece hızını ve gücünü arttırmakla kalmaz, aynı zamanda dövüş sırasında ihtiyacı olacak çeşitli silahları, kanatları ya da kalkanları üretebilme yeteneği de kazandırır. Kısacası, bu olağanüstü kostüm Jamieye neredeyse süper kahraman benzeri bir güç sağlar.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili:</span><span>Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi:</span><span>127 dakika</span></div>',
+                ['Fantastik', 'Bilim Kurgu', 'Macera'],
+                'Angel Manuel Soto'
+                
+
+            )"/>
+        </div>
+        <a href="#">
+            Blue Beetle İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/karmakarisıkposter.jpeg" onclick="openPopup(
+                'Karmakarışık',
+                'images/karmakarisıkposter.jpeg',
+                '2010 yapımı bir film olan Tangled, herkesin bildiği Rapunzel hikayesini son derece farklı ve eğlenceli bir bakış açısıyla sinemaseverlerin karşısına çıkarıyor. Yönetmenlik koltuğunda Nathan Greno ve Byron Howard ikilisinin oturduğu bu keyifli yapımda Rapunzel, hayatının büyük bir bölümünü bir kulede tutsak geçiren; güzeller güzeli genç bir kadındır. Artık dışarıdaki dünyayı keşfetmek isteyen Rapunzel’in karşısına, bu sırada hiç beklenmedik bir şey çıkar. Krallığın en çok aranan haydutlarının başında gelen Flynn Rider, Rapunzel’i bu kuleden kaçırarak rehin almıştır. Son derece sıradışı bir şekilde yolları kesişen bu ikili, bir o kadar sıradışı bir maceraya atılacaktır. Amerika Birleşik Devletleri yapımı olan bu filmin senaryosu Dan Fogelman, Jacob Grimm ve Wilhelm Grimm’in imzasını taşıyor. Animasyon, macera ve komedi türlerinde izleyicilerin karşısına çıkan 4k yapım; IMDB’den de tam 7.7 puan alıyor. Eğlenceli animasyonun seslendirmelerini ise Mandy Moore, Zachary Levi, Donna Murphy, Ron Perlman ve M.C. Gainey gibi isimler yapıyor.Henüz küçük bir bebekken sihirli bir çiçekten büyülü güçler kazanan Prenses Rapunzel, bir gece Rahibe Gothel tarafından saraydan kaçırılır. Daha sonra Rapunzel’in kazandığı bu büyülü güçlerin saçlarına yansıdığını fark eden Gothel, onu her zaman genç kalabilmesi için gizli bir kuleye kilitler. Aradan geçen yılların ardından genç bir kız haline gelen Rapunzel’in saçı, metrelerce uzunluğa ulaşmış ve adeta altın gibi parlasa da; Rapunzel bir tutsak hayatı yaşamaktadır.Tam anlamıyla tüm hayatını bu kulede kilitli bir şekilde geçiren Rapunzel, artık hem büyümüş ve hem de buradan fazlasıyla sıkılmıştır. Dış dünyanın güzelliklerini merak eden ve artık özgürlüğüne kavuşmak isteyen genç prenses, günün birinde Flynn Ryder isimli bir haydut tarafından kuleden kaçırılır. Kendisini esir alan bu haydutla bir anlaşma yapmaya karar veren Rapunzel, her yıl doğum gününde kendisine gözüken ışıkları görebilmek adına; Ryder ile hem büyüleyici hem de hayatının en heyecan dolu yolculuğuna çıkacaktır.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili:</span><span>Türkçe Dublaj</span></div><div class=\'single-info\'><span>Süresi:</span><span>100 dakika</span></div>',
+                ['Animasyon', 'Fantastik', 'Macera'],
+                'Byron Howard, Nathan Greno'
+               
+
+            )"/>
+        </div>
+        <a href="#">
+            Karmakarışık İzle
+        </a>
+    </div>
+
+    
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/theoathh.jpg" onclick="openPopup(
+                'The Oath',
+                'images/theoathh.jpg',
+                'M.S. 400 yılında, Antik Amerika\'nın unutulmuş bir döneminde, yalnız bir Hebraic firari, düşmüş milletinin tarihini korumak zorundadır. Bu esnada, acımasız bir zalim tarafından kıyasıya avlanmaktadır. Ancak firarinin, Kralın istismar edilen metresini kurtarması, bir savaşçının geçmişini yeniden canlandırabilir.Bıçaklarının ağzına kadar doldurulduğu bu karanlık dönemde, hiç kimsenin takip etmediği bir Hebraic yabancı, bastırılmış bir halkın hikayesini yaşatmak için belini bükmüştür. Yetenekli bir tarih koruyucusu olmasına rağmen, her an her şeyi kaybedebilecek bir durumdadır. Çünkü, halkının geçmişini yok etmeye and içmiş bir tiran onun peşindedir. Ama işler, bu firarinin kralın acımasızca istismar ettiği metresini kurtarmaya karar verdiği anda değişmeye başlar. Bir savaşçının yıllar önce unutulmuş olan geçmişi, belki de yeniden uyanacaktır. Firarinin geçmişteki savaşçı ruhu, kralın metresini kurtarırken ortaya çıkabilir ve bu, yolumuzdaki yabancının kaderini belirleyebilir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>104 dakika</span></div>',
+                ['Aksiyon', 'Dram', 'Macera'],
+                'Darin Scott'
+                
+
+            )"/>
+        </div>
+        <a href="#">
+            The Oath İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/avengers1.jpg" onclick="openPopup(
+                'Yenilmezler',
+                'images/avengers1.jpg',
+                'Yenilmezler 1 filminde, Marvel’in en çok iz bırakan kahramanlarını bir arada buluşuyor. Demir Adam, Hulk, Thor, Kaptan Amerika, Hawkeye ve Black Widow. Beklenmedik bir düşman su yüzüne çıkıp dünyanın güvenliğini tehdit etmeye başlıyor. S.H.I.E.L.D. adıyla bilinen uluslararası barışı koruma teşkilâtının yöneticisi olan Nick Fury, dünyayı böylesi bir felâketten kurtarmak için bir takıma ihtiyacı olduğunu anlıyor. Takıma adam seçmek için dünyanın dört bir yanını gezmeye başlıyor. Bir Marvel filmi olan Yenilmezler’de hiç beklenmedik bir düşmanın küresel güvenliği tehdit etmeye başlaması üzerine bir araya gelen bir süper kahraman ekibi, Dünya’yı felâketin eşiğinden kurtarmaya çalışıyor. Başrollerini Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner ve Tom Hiddleston’un paylaştığı bu ekibe Stelan Skarsgard’la Samuel L. Jackson eşklik ediyor. Joss Whedon’un Zak Penn ile birlikte yazdığı hikayeden senaryolşatırdığı ve yönettiği Yenilmezler, ilki 1963 yılında basılan ve o günden beri Marvel’in en sevilen çizgi roman serilerinden biri olan “The Avengers”tan uyarlandı. Aksiyon ve olağanüstü özel efektlerle dolu, muhteşem bir filme hazır olun.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>143 dakika</span></div>',
+                ['Aksiyon', 'Bilim Kurgu', 'Macera'],
+                'Joss Whedon'
+               
+
+            )"/>
+        </div>
+        <a href="#">
+            Yenilmezler İzle
+        </a>
+    </div>
+
+    
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/avengers2ultroncagi.jpg" onclick="openPopup(
+                'Yenilmezler 2: Ultron Çağı',
+                'images/avengers2ultroncagi.jpg',
+                'Yenilmezler 2 Ultron Çağı Filminde, Iron Man, Captain America, Thor, Hulk, Black Widow ve Hawkeye gibi süper kahramanlardan oluşan bir ekip, dünyayı korumak için bir araya gelir. Tony Stark, süper kahramanların güçlerini bir araya getirebilmek için aktif olmayan bir barışı koruma programı olan Ultron\'u hayata geçirmeye karar verir. Ancak, bu yapay zeka programı, Stark\'ın beklentilerinin aksine kendi zekasını ve bilincini geliştirir ve hain planlarını gerçekleştirme fırsatı bulur.Ultron, insanlığı yok etmek ve dünyayı ele geçirmek için bir dizi kötü niyetli plan yapar. Süper kahramanlar, Ultron\'u durdurabilmek için bir kez daha bir araya gelmek zorunda kalır. Fakat bu kez, sadece insanlık değil, aynı zamanda kendi aralarındaki dinamikler de test edilecektir. Film, aksiyon dolu sahneleri, görsel efektleri ve oyuncu performanslarıyla dikkat çekiyor. Robert Downey Jr., Tony Stark / Iron Man rolünde yine mükemmel bir performans sergiliyor ve karakterin çelişkili doğasını ustaca yansıtıyor. Scarlett Johansson, Black Widow karakteriyle dikkat çekiyor ve güçlü eylemleriyle izleyiciyi etkiliyor. Mark Ruffalo, Hulk olarak hem güçlü hem de duygusal bir performans sergiliyor. Filmin kötü karakteri olan Ultron, seslendirmesini yapan James Spader tarafından korkutucu ve etkileyici bir şekilde canlandırılıyor. Spader\'ın sesi, Ultron\'un karizmasını ve tehlikeli doğasını vurguluyor.Film, Marvel Sinematik Evreni\'nin bir parçası olduğu için diğer Marvel kahramanlarına da göndermeler içeriyor. Bu, hayranları memnun ederken, aynı zamanda hikayeyi daha zengin ve derin kılıyor.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>143 dakika</span></div>',
+                ['Aksiyon', 'Bilim Kurgu', 'Macera'],
+                'Joss Whedon'
+                
+
+            )"/>
+        </div>
+        <a href="#">
+            Yenilmezler 2: Ultron Çağı İzle
+        </a>
+    </div>
+
+    
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/yenilmezler-sonsuzluk-savasi.jpg" onclick="openPopup(
+                'Yenilmezler 3: Sonszluk Savaşı',
+                'images/yenilmezler-sonsuzluk-savasi.jpg',
+                'Avengers takımı her zaman olduğu gibi dünyayı bir takım kötücül güçlerden korumaya devam etmektedir. Fakat bu cesur kahramanlarımızın bir türlü fark edemedikleri yeni ve devasa kötülükte bir güç akıl almaz bir hızla dünyaya yaklaşmaktadır. Bu büyük ve acımasız gücün adı ise Thanos’dur. Thanos’un tek amacı 6 sonsuzluk taşını ele geçirerek  bu devasa gücü çok kötü ve yok edici bir şekilde kullanabilmektir.Fakat Avengers ekibi, Thanos’un bu tehlikeli planını oldukça geç öğrenir ve Thanosla karşılaşmak için yeterince hazır değildirler. Thanos nihayet 6 sonsuzluk taşını ele geçirir ve zannedildiği gibi yalnızca dünyayı değil tüm evreni ortadan kaldırmaya ve yok etmeye çalışır.Kahramanlarımız devasa Thanos karşısında güçlerini birleştirirler fakat ne yazık ki Thanos\'u durdurarak evreni yok oluştan kurtarmak için sadece Doktor Strange\'in tek bir hamle yapma hakkı vardır!  ',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dubllaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>149 dakika</span></div>',
+                ['Aksiyon', 'Bilim Kurgu', 'Macera'],
+                'Anthony Russo, Joe Russo'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Yenilmezler 3: Sonsuzluk Savaşı İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/avengersendgame.jpg" onclick="openPopup(
+                'Yenilmezler 4: End Game',
+                'images/avengersendgame.jpg',
+                'Avengers Infinity War\'un ardından pek çok süper kahraman küle dönüşmüştür. Doktor Strange, Gamora, Drax, Mantis, genç Örümcek Adam, Black Panther, Bucky Barnes, Groot, Scarlet Witch, Vision, Star Lord, Maria Hill, The Wasp ve Nick Fury gibi pek çok kahraman, Thanos\'un Sonsuzluk Eldivenini ele geçirmesi ve kendi dengesini kurması yüzünden yok olmuştur ve dünya umutsuz haldedir. Dünya üzerinde kalan Black Widow, Kaptan Amerika, Thor ve Hulk kendi yaslarını tutmaktayken, Iron ve Nebula ise kontrol edemedikleri bir uzay gemisinin içinde, uzay boşluğunda sürüklenmektedirler. Süper kahramanlar takımı için işler pek de iyi görünmemektedir. Ancak Kuantum Bölgesinden çıkmanın bir yolunu bularak Avengers ekibinin kalan üyelerine giden Ant-Man, yeni bir umut ışığı olacaktır. Daha önce var olduğunu bilmedikleri bölgeler, kahramanlar ve evrenlerin varlığını öğrenen ekip, Thanos\'un kurduğu bu çarpık dengeyi değiştirmek ve kendilerinden alınanı geri getirmek için hayatlarının en büyük mücadelesine girişeceklerdir. Hepsi kişisel olarak önem verdikleri şeyleri kaybetmiş olan kahramanlarımız için intikam vakti gelmiştir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dubllaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>181 dakika</span></div>',
+                ['Aksiyon', 'Bilim Kurgu', 'Macera'],
+                'Anthony Russo, Joe Russo'
+                
+
+            )"/>
+        </div>
+        <a href="#">
+            Yenilmezler 4: Son Oyun İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/hiddenfigures.jpg" onclick="openPopup(
+                'Gizli Sayılar',
+                'images/hiddenfigures.jpg',
+                'Katherine G. Johnson, Dorothy Vaughan ve Mary Jackson tarihin anlatılmayan hikayelerinden birine sahiptir. 3 siyahi kökenli kadın NASA\'da büyük işlere imza atmaktalardır. Uzay ve bilimlerinin derinliklerindeki sorunları müthiş zekalarıyla çözmeye çalışan bu kadınlar gelmiş geçmiş en önemli NASA operasyonlarından birinde de büyük rol oynayacaklardır. Dünya yörüngesine çıkan ilk Amerikalı astronot John Glenn\'in bütün dünyayı heyecana boğan operasyondaki her adımı bu 3 zeki bilim kadınının yardımıyla olacaktır.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>127 dakika</span></div>',
+                ['Dram', 'Tarihi Kurgu', 'Biyografik'],
+                'Theodore Melfi'
+            
+            )"/>
+        </div>
+        <a href="#">
+            Gizli Sayılar İzle
+        </a>
+    </div>
+
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/barbiemovie.jpg" onclick="openPopup(
+                'Barbie',
+                'images/barbiemovie.jpg',
+                'Barbie, uyum sağlayabileceği bir dünya bulma umuduyla yolculuğa çıkan bir kadının hikayesini konu ediyor. Barbie, yaşadığı dünyanın koşullarına uymayan bir kadındır. Yaşadığı dünyanın mükemmel kadın imajına uzak olduğunu farkeden Barbie, yaşadığı fantastik dünyadan dışlanır ve kimsenin iletişim kurmak istemediği biri halini alır. Uyum sağlayabileceği bir dünya bulma umuduyla bizim yaşadığımız gerçek dünyaya bir yolculuğa çıkar. Bu yeni dünyada, onu kendi evinde dışlanmış kılan farklılıkları, onu özel kılan avantajlara dönüşür.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>114 dakika</span></div>',
+                ['Fantastik', 'Komedi', 'Macera'],
+                'Greta Gerwig'
+                
+                
+            )"/>
+        </div>
+        <a href="#">
+           Barbie İzle
+        </a>
+    </div>
+
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/hobbit1-beklenmedikyolculuk.jpg" onclick="openPopup(
+                'Hobbit 1: Beklenmedik Yolculuk',
+                'images/hobbit1-beklenmedikyolculuk.jpg',
+                'Hikaye, ana karakter Bilbo Baggins\'in Erebor\'un kayıp Cüce Krallığını korkunç dragon Smaug\'dan geri almaya çalışmasını anlatıyor. Gandalf\'ın aniden ortaya çıkmasıyla Bilbo kendini efsanevi savaşçı Thorin Oakenshield tarafından yönetilen 13 cüceden oluşan bir grubun içinde bulur. Yolculuklarında Goblinler, Orklar, öldürücü Warglar, Dev Örümcekler, Şekil Değiştirenler ve Büyücülerle dolup taşan tehlikeli topraklar onları beklemektedirler. Amaçları her ne kadar Doğuda Yalnız Dağın çorak topraklarında olsa da önce, Goblin tünelinden kaçmak zorundadırlar. Bu sırada Bilbo hayatını tamamen değiştirecek olan Gollum\'la tanışır. Yer altındaki gölün kıyısında Gollum ile tek başına kalan Bilbo kendisini bile şaşırtacak yetenek zeka ve cesaretle birlikte Gollum\'un kıymetli yüzüğüne de sahip olur. Bu basit altın yüzük Bilbo\'nun bilemesine imkan olmayan bir şekilde Orta Dünyanın kaderini belirleyecektir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>169 dakika</span></div>',
+                ['Macera','Fantastik'],
+                'Peter Jackson'
+                
+            )"/>
+        </div>
+        <a href="#">
+           Hobbit 1: Beklenmedik Yolculuk İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/Hobbit2-thedesolationofsmaug.jpg" onclick="openPopup(
+                'Hobbit: Smaug\'un Çorak Toprakları',
+                'images/Hobbit2-thedesolationofsmaug.jpg',
+                'Hobbit üçlemesinin ikinci filmi olan yapım Misty Dağları\'ndan başarıyla geçen Thorin ve beraberindekilerin Mirkwood ormanındaki zorlu maceralarına odaklanıyor. Yanlarında Büyücü Gandalf olmadan ormanı geçmek zorunda olan Hobbitler insanların yaşadığı bölgeye ulaştığında Bilbo Baggins\'in cücelerle olan anlaşması da son bulacak. Yalnız Dağ\'a ulaşmak zorunda olan ekip ulu ejder Smaug\'un saklandığı inine giden Gizli kapıyı bulabilecekler mi? Peki güneye doğru gizli bir görev peşinde olduğunu söyleyen Gandalf nerede?',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>161 dakika</span></div>',
+                ['Fantastik', 'Macera'],
+                'Peter Jackson'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Hobbit: Smaug'un Çorak Topraklar İzle
+        </a>
+    </div>
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/hobbit3-besordununsavasi.jpg" onclick="openPopup(
+                'Hobbit: Beş Ordunun Savaşı',
+                'images/hobbit3-besordununsavasi.jpg',
+                'Serinin 3. ve son filmi olan Hobbit: Beş Ordunun Savaşında Bilbo Baggins ve arkadaşları güç yüzüğüne ulaşarak ejderha ile karşılaşacaklar. Thorin Meşekalkan ise Arkentaşını bulmak ve ona sahip olmak için çok şeyini kaybedecektir. Thorin Meşekalkan\'ın gözleri Arken taşından başka kimseyi görmez onun cazibesi altında kalır. Diğer yanda elfler ve insanlar ejderha ile büyük bir savaşa gireceklerdir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>144 dakika</span></div>',
+                ['Fantastik', 'Macera'],
+                'Peter Jackson'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Hobbit: Beş Ordunun Savaşı İzle
+        </a>
+    </div>
+
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/lalaland.jpg" onclick="openPopup(
+                'Lala Land',
+                'images/lalaland.jpg',
+                'Aşıklar Şehri, yolları kesişen iki insanın hikayesini anlatıyor. Hayatlarında yön bulmaya çalışan iki tutkulu insan Sebastian ve Mia\'nın yolları, Los Angeles\'ta trafiğin sıkışık olduğu bir gün kesişir. Her ikisi de sanat tutkunu olan bu iki insan, hayallerini gerçekleştirme yolunda düşe kalka ilerlemektedir. Sebastian gelenekseksel jazzın kolonlardan yükseldiği bir kulüp açma hayalinde, Mia ise kafesinde çalıştığı film platosunda kendine uygun tüm oyunculuk seçmelerine katılarak bir rol kapma telaşındadır. Bu iki insanın kalpleri birbiri için atmaya başladığında ortaya çıkan manzarayı hayat şartları bozacak, onları yavaş yavaş hayallerinden uzaklaştırmaya başlayacaktır. Oscar ödüllü Whiplash’in yazarı Damien Chazelle’in yazıp yönettiği bu romantik müzikal, modern zamana adanmış bir Hollywood masalı.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>128 dakika</span></div>',
+                ['Romantik', 'Müzikal'],
+                'Damien Chazelle'
+                
+            )"/>
+        </div>
+        <a href="#">
+          Lala Land İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/sadecesen.jpg" onclick="openPopup(
+                'Sadece Sen',
+                'images/sadecesen.jpg',
+                'Ali, yaşamında oldukça zor bir dönemden geçmektedir. Nasıl başa çıkacağını düşündüğü bir sırada, sessiz sakin bir hayat sürmekte olan Hazal ile tanışır. Hazal, Ali\'nin ketum ve durgun ruhuna büyük heyecan katacak, kalbi onun için çarpmaya başlayacaktır. Birbirlerini tanıdıkça Ali\'nin Hazal hakkında öğrendikleri, ona geçmişte kendi yaptığı hataları hatırlatacaktır. Ali her ne kadar boksörlük mesleğini bırakmış olsa da Hazal\'a olan aşkı için son bir kez dövüşmesi gerekecektir... Aşkın engel tanımadığını ortaya koyan Sadece Sen, zorlukların içinde filizlenen bir ilişkiyi beyazperdeye taşıyor. Emekliye ayrılmış bir boksörle görme engelli bir kızın arasında tutkulu bir aşk olabilir mi? Acaba boksörün geçmişi bu aşka başka bir engel mi oluşturacaktır yoksa o güçlü bağ her şeyin üstesinden gelebilecek midir?  Yapımcılığını Boyut filmin üstlendiği dram ve romantizmi birleştiren Sadece Sen filminin yönetmenliğini Hakan Yonat üstlenirken, kadroda Belçim Bilgin, İbrahim Çelikkol, Kerem Can ve Necmi Yapıcı gibi isimler yer alıyor. ',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe</span></div><div class=\'single-info\'><span>Süresi: </span><span>105 dakika</span></div>',
+                ['Romantik', 'Aksiyon', 'Dram'],
+                'Hakan Yonat'
+                
+            )"/>
+        </div>
+        <a href="#">
+           Sadece Sen İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/prideandprejudice.jpg" onclick="openPopup(
+                'Aşk ve Gurur',
+                'images/prideandprejudice.jpg',
+                'Film, Jane Austen’in beş kız kardeş, Jane, Elizabeth, Mary, Kitty ve Lydia Bennet’i anlatan romanından uyarlanmıştır. Hikaye George dönemi İngilteresi’nde geçer. Ailenin yaşamı, genç ve zengin bir adam olan Bay Bingley’in ve onun en yakın arkadaşı Bay Darcy’nin komşu gelişleri ile tepetaklak olur. Kızların anneleri olan Bayan Bennet, onların evlenmelerini istemektedir. Bay Bingley’in iyi bir aday olduğuna kanaat getirir. Bu aday ise Jane’den etkilenecektir. Bu durumu fark eden anneleri, kızını yağmurlu bir günde Bingley’in malikanesine gönderir. Geri dönemeyen Jane, üstüne bir de hastalanır. Bu kez ona yardıma giden Elizabeth de Bay Darcy’nin takibine takılır. Elizabeth bu durumdan hoşlansa da esas Bay Wickham’dan ziyadesi ile etkilenecektir. Lydia işin içine hesapsızca dahil olduğunda cesaret kavramı gözler önüne serilir. Gururun, aşkın önüne geçtiği bir çizgide kız kardeşlerin yaşamları umulmadık bir biçimde karmaşıklacaktır.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>127 dakika</span></div>',
+                ['Romantik', 'Dram'],
+                'Joe Wright'
+                
+            )"/>
+        </div>
+        <a href="#">
+           Aşk ve Gurur İzle
+        </a>
+    </div>
+        
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/charliecikolata.jpg" onclick="openPopup(
+                'Charlie\'nin Çikolata Fabrikası',
+                'images/charliecikolata.jpg',
+                'Charlie ailesi ile zor bir şekilde geçinen fakir bir çocuktur. Tüm dünya ve Charlie, çikolata fabrikasıyla zengin olmuş Willy Wonka\'nın esrarengiz ve yıllardır kapalı olan fabrikasını merak etmektedir. Ama bir gün Willy Wonka 5 çikolata ambalajının altına altın bilet saklamıştır. Altın biletleri bulan 5 çocuk fabrikaya girme hakkına sahip olacak ve içlerinden biri hayallerinin ötesinde bir dünyaya kavuşacaktır. Ve Charlie ise çikolata alamayacak kadar fakir olmalarına rağmen o fabrikaya girmek için elinden geleni yapacaktır.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>115 dakika</span></div>',
+                ['Fantastik', 'Çocuk'],
+                'Tim Burton'
+            )"/>
+        </div>
+        <a href="#">
+           Charlie'nin Çikolata Fabrikası İzle
+        </a>
+    </div>
+
+         
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/interstellar.jpg" onclick="openPopup(
+                'Yıldızlararası',
+                'images/interstellar.jpg',
+                'Yıldızlararası\'nda, teknik bilgisi ve becerisi yüksek olan Cooper, geniş mısır tarlalarında çiftçilik yaparak geçinmektedir; amacı iki çocuğuna güvenli bir hayat sunmaktır. Onlarla yaşayan Büyükbaba Donald çocuklara göz kulak olurken, henüz 10 yaşındaki kızı Murph şaşırtıcı bir zekaya sahiptir. Geçmişte bıraktığı biliminsanı kariyerini özleyen Cooper\'un karşısına bir gün beklenmedik bir teklif çıkar ve ailesinin, dahası insanlığın güvenliği için zorlu bir karar alması gerekir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dubaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>169 dakika</span></div>',
+                ['Macera', 'Bilim Kurgu', 'Dram', 'Macera'],
+                'Christopher Nolan'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Yıldızlararası İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/narnialionwitch.jpg" onclick="openPopup(
+                'Narnia Günlükleri: Aslan, Cadı ve Dolap',
+                'images/narnialionwitch.jpg',
+                'Pevensie ailesi, savaş nedeni ile güvende olmadıkları ülkelerini tahliye ettiklerinde karşılaşacakları maceradan haberdar değildiler. Dört kardeş, bir profesörün yanında yaşamaya başlarlaR. Bu sırada saklambaç oynayan en küçük kardeş Lucy, kendisini Narnia topraklarına götüren bir elbise dolabı keşfeder. Karlar altındaki Narnia tuhaf ama eşsiz yaratıklarla doludur. Beyaz Cadı Jadis tarafından da gözlenmektedir. Ailenin tüm çocukları bu dolabın içinden geçtiklerinde bambaşka bir dünya kurulur içlerinde. Hayvanların dile geldiği bu dünyanın yöneticisi Aslanı bulmaları ve Cadıyı da etkisiz hale getirmeleri gerekmektedir. Çocukların hayal dünyasını zengin kılan bu muhteşem kitaplar serisinin perdeye uyarlanışı Şrek’in yönetmeni Andrew Adamson’dan.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>150 dakika</span></div>',
+                ['Fantastik', 'Macera', 'Aile'],
+                'Andrew Adamson'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Narnia Günlükleri: Aslan, Cadı ve Dolap İzle
+        </a>
+    </div>
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/narnia2princecaspian.jpg" onclick="openPopup(
+                'Narnia Günlükleri: Prens Kaspiyan',
+                'images/narnia2princecaspian.jpg',
+                'arnia’nın büyülü dünyasında zaman bizim dünyamızdan daha hızlı akmaktadır. Bu nedenle tren istasyonundan hareket etmeyi bekleyen Pevensie kardeşler, çağırılmaları üzerine Narnia\'ya getirildiğinde bildikleri Narnia\'nın artık çok eskide kaldığını öğrenirler. Narnia artık Telmarlıların hükmündedir ve başlarında tahtı yeğeninden çalan Kral Miraz vardır. Şeytani ruhlu bu kralı devirebilmek ve Narnia’nın güzel günlerini geri getirebilmek için Pevenie kardeşler genç Prens Caspian ile birlikte hareket eder ve bildikleri bu dünyayı yeniden eski haline kavuşurmak için savaşır.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>150 dakika</span></div>',
+                ['Fantastik', 'Macera', 'Aile', 'Çocuk'],
+                'Andrew Adamson'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Narnia Günlükleri: Prens Kaspiyan İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/narniasafakyildizi.jpg" onclick="openPopup(
+                'Narnia Günlükleri: Şafak Yıldızının Yolculuğu',
+                'images/narniasafakyildizi.jpg',
+                'Cambridge-İngiltere’de İkinci Dünya Savaşı sırasında geçiyor. Pevensie kardeşler, Eustace Clarence Scrubb isimli sinir bozucu kuzenlerinin yanında yaşamaya başlarlar. Bir gün çocukların üçü de, açık denizde duran bir geminin çizildiği tabloya bakarken, resmin içine çekilirler. Kendilerini okyanusun altında bulurlar ve görkemli Şafak Yıldızını görmek için suyun yüzeyine doğru yüzerler.Caspian ve Reepicheep ile beraberdir. Caspian’ın görevi, yedi soylu Telmarlı Narnia Lordu’nun akıbetini keşfetmektir.Yedi soylu Telmarlı Narnia Lordu, kötü amcası tarafından sürgün edilmiştir. Eustace ve Reepicheep ve Pevensie kardeşler de Caspian’a yardım ederler. Narnia’nın geleceği tehlikededir. Ejderhalar, sihirli Dufflepudlarla, kötü niyetli köle tüccarlarla ve büyülü mer halkıyla baş etmek zorundadırlar.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dublaj/Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>113 dakika</span></div>',
+                ['Fantastik', 'Macera', 'Aile', 'Çocuk'],
+                'Michael Apted'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Narnia Günlükleri: Şafak Yıldızının Yolculuğu İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/gangubai.jpg" onclick="openPopup(
+                'Narnia Günlükleri: Şafak Yıldızının Yolculuğu',
+                'images/gangubai.jpg',
+                'Genç Ganga, 1950\'lerde sevgilisi tarafından oyuncu olacağı vaadiyle Mumbai\'de bir geneleve satılır. Ganga zamanla, dar görüşlü bir toplumda kadın kurtuluşunun şampiyonu ve kadın haklarının savunucusu olan Gangubai\'ye, Kamathipura\'nın Anası\'na dönüşür.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>154 dakika</span></div>',
+                ['Suç', 'Dram', 'Tarih', 'Hint Filmi'],
+                'Sanjay Leela Bhansali'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Gangubai Kathiawadi İzle
+        </a>
+    </div>
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/frozen1.jpg" onclick="openPopup(
+                'Karlar Ülkesi',
+                'images/frozen1.jpg',
+                'Maceracı ve iyi kalpli bir kız olan Anna, kız kardeşi Prenses Elsa\'yı bulup yaşadığı krallığa sonsuz kış getiren laneti sona erdirmesini sağlayarak, şehrinde yaşayan insanları eski güzel günlerine döndürmeye karar verir. Masalsı bir yolculuğa çıkan Anna\'nın yol arkadaşı ise usta bir dağcı olan Kristoff ve sadık Ren geyiği Sven\'dir. Ayrıca Olaf adlı bir başka yol arkadaşları daha olur. Mitolojik yaratıklar ve ürkütücü büyüler eşliğinde süren yolculuğun her dönemecinde ayrı bir tehlike ortaya çıkar. Yolculuğun asıl zor yanı ise zamanla yarışıyor oldukları gerçeğidir.',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dubaj</span></div><div class=\'single-info\'><span>Süresi: </span><span>102 dakika</span></div>',
+                ['Çocuk', 'Fantastik', 'Müzikal'],
+                'Chris Buck, Jennifer Lee'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Karlar Ülkesi İzle
+        </a>
+    </div>
+
+    
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/frozen2.jpg" onclick="openPopup(
+                'Karlar Ülkesi 2',
+                'images/frozen2.jpg',
+                'Karlar Ülkesi 2, Erindel’in kapılarının çok ötesinde tehlikeli bir yolculuğa çıkan Elsa, Anna, Kristoff, Olaf ve Sven’in maceralarını konu ediyor. Elsa, hayatını etkileyen bir sorunun cevabını arar. Elsa neden büyülü güçlerle doğdu? Bu sorunun cevabını bulmak için Erindel\'in dışındaki ormana, bir bilinmeyene doğru giden Elsa, geçmişi ile ilgili gerçeklerle yüzleşecektir. Krallığı da tehlikeye atan cevapların peşine düşen Elsa, Anna, Kristoff, Olaf ve Sven ile birlikte tehlikeli ve bir o kadar da olağanüstü bir yolculuğa çıkar',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Dubaj</span></div><div class=\'single-info\'><span>Süresi: </span><span>103 dakika</span></div>',
+                ['Animasyon', 'Aile', 'Müzikal', 'Macera'],
+                'Chris Buck, Jennifer Lee'
+                
+            )"/>
+        </div>
+        <a href="#">
+            Karlar Ülkesi 2 İzle
+        </a>
+    </div>
+
+   
+
+    <div class="movies-box">
+        <div class="movies-img">
+            <img src="images/ciglik6.png" onclick="openPopup(
+                'Çığlık 6',
+                'images/ciglik6.png',
+                'Çığlık 6, Hayalet Maskeli cinayetlerinden kurtulduktan sonra Woodsboro kasabasını geride bırakıp New York\'ta yeni bir hayata başkayan dört kişinin hayatına odaklanıyor. Son Hayalet Maskeli cinayetlerinin ardından, hayatta kalan dört kişi, artık hayatlarında yeni bir sayfa açmak ister ve bu amaçla Woodsboro kasabasından ayrılır. New York\'ta kendilierine yeni bir düzen kuran 4 kişi, her ne kadar kasabayı arkalarında bırakmış olsalar da maskeli katilden kurtulmayı başarabilecekler midir?',
+                'Film Dili ve Süresi',
+                '<div class=\'single-info\'><span>Dili: </span><span>Türkçe Altyazılı</span></div><div class=\'single-info\'><span>Süresi: </span><span>122 dakika</span></div>',
+                ['Korku', 'Gizem', 'Suç'],
+                'Tyler Gillett, Matt Bettinelli-Olpin'
+                
+            )"/>
+        </div>
+        <a href="#">
+           Çığlık 6 İzle
+        </a>
+    </div>
+
+
+    </section>
+</section>
+
+
+    <!----CONTROL BUTONU-->
+
+    <div class="controls">
+        <button class="prev">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button class="next">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </div>
+
+
+    <!-------------------------Footer------------------------>
+<footer class="footer-section">      
+    <div class="footer-info">
+        <span class="footer-copy">
+            &#169; TÇE
+            <i class="fa-regular fa-moon"></i>
+        </span>
+        
+    </div>
+
+</footer>
+
+
+
+
+<!------------------SCRIPT KISMI--------------------->
+<!--popup kısmı-->
+<script>
+    function openPopup(baslik, posterSrc, konusu, tagline, bilgi, tur,yonetmen ) {
+        //bunların hepsi id bu yüzden id'ye göre alıyoruz
+        //film-list id’sine sahip filmleri görüntülemek için kullanıldılar
+        var popup = document.getElementById("popupContent");
+        var popupTitle = document.getElementById("popupTitle");
+        var popupPoster = document.getElementById("popupPoster");
+        var popupOverview = document.getElementById("popupOverview");
+        var popupTagline = document.getElementById("popupTagline");
+        var popupInfoContainer = document.getElementById("popupInfoContainer");
+        var popupGenres = document.getElementById("popupGenres");
+        var popupDirector = document.getElementById("popupDirector")
+      
+        // Filmin bilgilerini popup içeriğine yerleştir ve içerikleri güncelle
+        popupTitle.textContent = baslik; //baslik
+        popupPoster.src = posterSrc; //poster
+        popupOverview.innerHTML = konusu; //konu
+        popupTagline.textContent = tagline; //tagline
+        popupDirector.textContent=yonetmen;  //yönetmen
+
+        // filmle ilgili diğer bilgileri içeren bir bilgi konteynırını güncelliyor
+        popupInfoContainer.innerHTML = bilgi;
+
+        //Film türlerini içeren liste ögesini günceller ve türleri popupGenres içeriğini kullanarak doldurur
+        // her bir dizi öğesi, bir <li> etiketi içinde bulunacak ve bu etiketler birleştirilip tek bir string'e dönüştürülecek
+        popupGenres.querySelector('ul').innerHTML = tur.map(genre => `<li>${genre}</li>`).join('');
+
+        // Popup
+        var popup = document.getElementById("popupContent");
+        popup.style.display = "flex";  //popup penceresinin görünürlüğünü ayarlar ve flex stilini kullanarak pencereyi görünür hale getirir.
+    }
+
+    function closePopup() {
+        //opupContent id’si kullanılarak id tanımlayıcı ismine göre seçim yöntemi kullanıldı
+        var popup = document.getElementById("popupContent");
+        popup.style.display = "none";  //öğenin görünürlük durummunu ayarlandı
+    }
+</script>
+   
+
+<!---search butonu-->
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+    // Arama terimini küçük harfe çevir ve searchTerm değişkenine ata
+    var searchTerm = this.value.toLowerCase();
+
+     // '.movies-box a' sınıfına sahip tüm bağlantıları seç
+    var movies = document.querySelectorAll('.movies-box a');
+
+     // Seçilen bağlantılar üzerinde forEach döngüsü ile işlem yap
+    movies.forEach(function(movie) {
+        // Bağlantının metin içeriğini küçük harfe çevir ve movieTitle değişkenine ata
+        var movieTitle = movie.textContent.toLowerCase();
+
+         // Eğer film başlığı, arama terimini içeriyorsa displayStyle 'block yani eleman birbiri altına iner', aksi takdirde 'none' olacak şekilde belirlenir
+        var displayStyle = movieTitle.includes(searchTerm) ? 'flex' : 'none';
+
+          // Bağlantının üst öğesinin (ana div) görünürlük stilini belirlenmiş değere göre güncelle
+        movie.parentNode.style.display = displayStyle;
+    });
+});
+
+</script>
+
+
+<!---star icon----->
+
+<!----Star yani favori ekleme işareti için javascript-->
+<script>
+
+    function toggleStar() {
+        //star-icon sınıfına sahip ilk öğe seçilir
+      var starIcon = document.querySelector('.star-icon');
+      starIcon.classList.toggle('is-active'); //is-active sınıfını toggle eder (ekle/çıkar)
+    
+      var isActive = starIcon.classList.contains('is-active'); // // 'is-active' sınıfının varlığını kontrol et ve sonucu 'isActive' değişkenine ata
+    
+      //isAcive true ise rengi altın yap
+      if (isActive) {
+        starIcon.style.color = 'gold';
+      } else {
+        // Eğer favori kaldırıldıysa, orijinal rengi (varsayılan renk) kullan
+        starIcon.style.color = '#b0bbec';
+      }
+    }
+    
+    </script>
+   
+
+    
+     <!-- Slider jQuery Kodu -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        var autoWidthSlider = $("#autoWidth").lightSlider({
+            autoWidth: true,
+            loop: true,
+            onSliderLoad: function () {
+                $('#autoWidth').removeClass('cS-hidden');
+            }
+        });
+
+        var autoWidthSlider2 = $("#autoWidth2").lightSlider({
+            autoWidth: true,
+            loop: true,
+            onSliderLoad: function () {
+                $('#autoWidth2').removeClass('cS-hidden');
+            }
+        });
+
+        // Sol ok tıklanınca
+        $(".prev").on("click", function () {
+            autoWidthSlider.goToPrevSlide();
+            autoWidthSlider2.goToPrevSlide();
+        });
+
+        // Sağ ok tıklanınca
+        $(".next").on("click", function () {
+            autoWidthSlider.goToNextSlide();
+            autoWidthSlider2.goToNextSlide();
+        });
+    });
+
+    </script>
+
+</body>
+</html>

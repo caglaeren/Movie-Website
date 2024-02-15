@@ -1,0 +1,440 @@
+/* .lSSlideOuter: Slider dış container'ı */
+.lSSlideOuter {
+    overflow-x: hidden; /* Yatay taşmaları gizler */
+    -webkit-touch-callout: none; /* Dokunmatik uzun tıklamayı devre dışı bırakır */
+    -webkit-user-select: none; /* Kullanıcının seçim yapmasını engeller */
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* .lightSlider:before ve .lightSlider:after: Temizlik çözeltisi olarak eklenen içerikler */
+.lightSlider:before, .lightSlider:after {
+    content: " ";
+    display: table;
+}
+
+/* .lightSlider: Ana slider container'ı */
+.lightSlider {
+    overflow: hidden; /* İçerik taşmalarını gizler */
+    margin: 0; /* Varsayılan marjları sıfırlar */
+    background-color:rgba(151,151,151,0.03);   /*body ile aynı yaptım*/
+}
+/* .lSSlideWrapper: Slider wrapper'ı */
+.lSSlideWrapper {
+    max-width: 100%;  /*lider wrapper'ı, sayfa genişliğine bağlı olarak dinamik olarak ayarlanır. Sayfa küçülünce slider küçülür*/
+    overflow: visible; /* Taşmaları gizler ve içeriklerin sınırlarını aşmasına izin verir */
+    position: relative; /* Göreceli bir pozisyonlandırma kullanır */
+}
+
+
+/* .lSSlideWrapper > .lightSlider:after: Float temizleme ekler, sıradaki öğelerin uygun konumlandırılmasını sağlar */
+.lSSlideWrapper > .lightSlider:after {
+    clear: both;
+}
+
+/* .lSSlideWrapper .lSSlide: Slider öğelerinin kaydırılması için animasyon ve geçiş efektlerini tanımlar */
+.lSSlideWrapper .lSSlide {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -webkit-transition-property: -webkit-transform,height;
+    -moz-transition-property: -moz-transform,height;
+    transition-property: transform,height;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+
+/* .lSSlideWrapper .lSFade: Saydam bir geçiş efekti uygulamak için kullanılır */
+.lSSlideWrapper .lSFade {
+    position: relative;
+}
+
+/* .lSSlideWrapper .lSFade > *: Her slayt öğesini tam genişlik ve yükseklikte üst üste getirir */
+.lSSlideWrapper .lSFade > * {
+    position: absolute !important;
+    top: 0; /* Üst ve sol kenardan başlayarak pozisyonunu belirler. left:0*/
+    left: 0;
+    z-index: 9; /*Öğenin diğer öğelerin üstünde olmasını sağlar.*/
+    margin-right: 0;  /*Sağ kenardan gelen bir marj belirler.*/
+    width: 100%;
+}
+
+/* .lSSlideWrapper.usingCss .lSFade > *: CSS kullanımı için saydam bir geçiş efekti ekler */
+.lSSlideWrapper.usingCss .lSFade > * {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+
+
+/* .lSSlideWrapper .lSFade > *.active: Aktif slayt öğesini z-index ile öne çıkarır */
+.lSSlideWrapper .lSFade > *.active {
+    z-index: 10;
+}
+
+/* .lSSlideWrapper.usingCss .lSFade > *.active: CSS kullanımı için aktif slayt öğesine saydam bir geçiş efekti ekler */
+.lSSlideWrapper.usingCss .lSFade > *.active {
+    opacity: 1;
+}
+
+/* Pager */
+/* .lSSlideOuter .lSPager.lSpg: Sayfa numaralarının bulunduğu container */
+.lSSlideOuter .lSPager.lSpg {
+    margin: 10px 0 0; /* Sayfa numaralarının üst boşluğu ayarlar */
+    padding: 0; /* Sayfa numaralarının iç içe geçmesini engeller */
+    text-align: center; /* Sayfa numaralarını ortalar */
+}
+
+/* .lSSlideOuter .lSPager.lSpg > li: Sayfa numarası öğeleri */
+.lSSlideOuter .lSPager.lSpg > li {
+    cursor: pointer; /* Sayfa numaralarına tıklanabilir bir imleç ekler */
+    display: inline-block; /* Sayfa numaralarını yatayda sıralar */
+    padding: 0 5px; /* Sayfa numaralarının iç boşluğunu ayarlar */
+}
+
+/* .lSSlideOuter .lSPager.lSpg > li a: Sayfa numaralarının görüntüsü */
+.lSSlideOuter .lSPager.lSpg > li a {
+    background-color: #222222; /* Sayfa numarası arkaplan rengi */
+    border-radius: 30px; /* Sayfa numarasının kenar yuvarlaklığı */
+    display: inline-block; /* Dikey hizalanmış içerik */
+    height: 8px; /* Sayfa numarasının yüksekliği */
+    overflow: hidden; /* Taşan içeriği gizler */
+    text-indent: -999em; /* Metni ekrandan uzaklaştırır */
+    width: 8px; /* Sayfa numarasının genişliği */
+    position: relative; /* Göreceli bir pozisyonlandırma kullanır */
+    z-index: 99; /* Diğer öğelerin üzerinde görünmesini sağlar */
+    -webkit-transition: all 0.5s linear 0s; /* Tüm özelliklere geçiş efekti ekler */
+    transition: all 0.5s linear 0s;
+    display:flex; /* Sayfa numaralarını başlangıçta gizlemek için none yaparsın */
+}
+
+/* .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a: Sayfa numarasının üzerine gelindiğinde veya aktif olduğunda renk değişimi */
+.lSSlideOuter .lSPager.lSpg > li:hover a,
+.lSSlideOuter .lSPager.lSpg > li.active a {
+    background-color: #427aca; /* Sayfa numarasının üzerine gelindiğinde veya aktif olduğunda yeni arkaplan rengi */
+}
+
+/* .lSSlideOuter .media: Medya öğeleri için opaklık ayarı */
+.lSSlideOuter .media {
+    opacity: 0.8;
+}
+
+/* .lSSlideOuter .media.active: Aktif medya öğesi için opaklık ayarı */
+.lSSlideOuter .media.active {
+    opacity: 1;
+}
+/* End of pager */
+
+/** Gallery */
+/* Slayt gösterisi container'ının genel stil tanımlamaları */
+.lSSlideOuter .lSPager.lSGallery {
+    list-style: none outside none; /* Liste işaretini kaldır */
+    padding-left: 0; /* Sol kenardan içeri boşluk bırakma */
+    margin: 0; /* Sayfa içindeki boşluğu sıfırla */
+    overflow: hidden; /* İçerik taşma durumunda gizleme */
+    transform: translate3d(0px, 0px, 0px); /* 3D dönüşüm */
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transition-property: transform; /* Geçiş efekti özelliği */
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -webkit-touch-callout: none; /* iOS'ta dokunarak çağrıyı engelleme */
+    -webkit-user-select: none; /* Kullanıcı seçimini devre dışı bırakma */
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Slayt gösterisi pager'ının öğeleri (sayfa numaraları) için stil tanımlamaları */
+.lSSlideOuter .lSPager.lSGallery li {
+    overflow: hidden; /* İçerik taşma durumunda gizleme */
+    -webkit-transition: border-radius 0.12s linear 0s 0.35s linear 0s; /* Kenar yarıçapı geçiş efekti */
+    transition: border-radius 0.12s linear 0s 0.35s linear 0s;
+}
+
+/* Aktif sayfa numarası veya üzerine gelindiğinde kenar yarıçapını belirleme */
+.lSSlideOuter .lSPager.lSGallery li.active,
+.lSSlideOuter .lSPager.lSGallery li:hover {
+    border-radius: 5px;
+}
+
+/* Slayt gösterisi içindeki resim öğelerinin stil tanımlamaları */
+.lSSlideOuter .lSPager.lSGallery img {
+    display: block; /* Öğeyi blok olarak görüntüleme */
+    height: auto; /* Otomatik yükseklik ayarı */
+    max-width: 100%; /* Maksimum genişlik */
+}
+
+/* Pseudo öğelerin stil tanımlamaları */
+.lSSlideOuter .lSPager.lSGallery:before,
+.lSSlideOuter .lSPager.lSGallery:after {
+    content: " "; /* İçerik belirleme */
+    display: table; /* Tablo olarak görüntüleme */
+}
+
+/* Temizleme özelliği ile içerikleri temizleme */
+.lSSlideOuter .lSPager.lSGallery:after {
+    clear: both;
+}
+
+/* End of Gallery*/
+
+/* slider actions */
+.lSAction > a {
+    width: 32px;
+    display: block;
+    top: 50%;
+    height: 32px;
+    background-image: url('../img/controls.png');
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    margin-top: -16px;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.35s linear 0s;
+    transition: opacity 0.35s linear 0s;
+}
+.lSAction > a:hover {
+    opacity: 1;
+}
+.lSAction > .lSPrev {
+    background-position: 0 0;
+    left: 10px;
+}
+.lSAction > .lSNext {
+    background-position: -32px 0;
+    right: 10px;
+}
+.lSAction > a.disabled {
+    pointer-events: none;
+}
+
+/* Görünmez eleman yani genellikle bir öğeyi sayfanın düzeninde tutmak ancak görsel olarak gizlemek için kullanılır. 
+Bu sayede, eleman hala sayfa düzenine etki edebilir ancak görsel olarak görünmez olur. */
+.cS-hidden {
+    height: 1px;
+    opacity: 0; /* Elemanın opaklığını 0 (tamamen saydam) olarak ayarlar. Bu, elemanın görünmez olduğu anlamına gelir.*/
+    filter: alpha(opacity=0);  /*Eski Internet Explorer sürümlerinde opaklık için bir destek sağlar. Bu, elemanın IE'de de görünmez olmasını sağlar.*/
+    overflow: hidden;  /* Elemanın içeriğinin sınırlarını aşan herhangi bir içeriği gizler. */
+}
+
+/* vertical */
+.lSSlideOuter.vertical {
+    position: relative;
+}
+.lSSlideOuter.vertical.noPager {
+    padding-right: 0px !important;
+}
+.lSSlideOuter.vertical .lSGallery {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+}
+.lSSlideOuter.vertical .lightSlider > * {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* vertical controlls */
+.lSSlideOuter.vertical .lSAction > a {
+    left: 50%;
+    margin-left: -14px;
+    margin-top: 0;
+}
+.lSSlideOuter.vertical .lSAction > .lSNext {
+    background-position: 31px -31px;
+    bottom: 10px;
+    top: auto;
+}
+.lSSlideOuter.vertical .lSAction > .lSPrev {
+    background-position: 0 -31px;
+    bottom: auto;
+    top: 10px;
+}
+/* vertical */
+
+
+/* Rtl */
+.lSSlideOuter.lSrtl {
+    direction: rtl;
+}
+.lSSlideOuter .lightSlider, .lSSlideOuter .lSPager {
+    padding-left: 0;
+    list-style: none outside none;
+}
+.lSSlideOuter.lSrtl .lightSlider, .lSSlideOuter.lSrtl .lSPager {
+    padding-right: 0;
+}
+.lSSlideOuter .lightSlider > *,  .lSSlideOuter .lSGallery li {
+    float: left;
+}
+.lSSlideOuter.lSrtl .lightSlider > *,  .lSSlideOuter.lSrtl .lSGallery li {
+    float: right !important;
+}
+/* Rtl */
+
+@-webkit-keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@-webkit-keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+.lSSlideOuter .rightEnd {
+    -webkit-animation: rightEnd 0.3s;
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter .leftEnd {
+    -webkit-animation: leftEnd 0.3s;
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .rightEnd {
+    -webkit-animation: topEnd 0.3s;
+    animation: topEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .leftEnd {
+    -webkit-animation: bottomEnd 0.3s;
+    animation: bottomEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .rightEnd {
+    -webkit-animation: leftEnd 0.3s;
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .leftEnd {
+    -webkit-animation: rightEnd 0.3s;
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+/*/  GRab cursor */
+.lightSlider.lsGrab > * {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+.lightSlider.lsGrabbing > * {
+  cursor: move;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+}

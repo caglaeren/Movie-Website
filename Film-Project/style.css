@@ -1,0 +1,439 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    background-color:rgba(151,151,151,0.03);  /*0.03 ile saydamlaştırır rengi*/
+}
+*{
+    box-sizing: border-box;  /* daha işlevsel ve CSS kodunu başlangıçta tüm değerleri resetlemek için tanımlar.*/
+
+    /*NOT: border-box:box-sizing; tanımlandığında padding ve border değerleri div öğesinin genişlik ve yükseklik değerini değiştirmeyecektir.*/
+
+}
+ul{
+    list-style:none; /* sırasız listedeki maddelerin  işareti kaldırıldı*/
+}
+a{
+    text-decoration: none;  /*bağlantının alt çizgisi kaldırılır*/
+}
+nav{
+    display: flex;
+    justify-content: space-around;  /*space around ile flex item'ları arasına eşit boşluk bırakarak container'ı doldurur.*/
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.02);
+    background-color:#ffffff;/* rgba(151,151,151,0.03)*/;
+    position: fixed;  /*bir öğenin belirli bir konumda sabit kalmasını sağlar, yani sayfa kaydırıldığında öğenin konumu değişmez*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+}
+
+.logo img{
+    height: 75px;
+
+}
+
+nav .menu{
+    display: flex;
+}
+
+/*anasayfa, filmler ve logo kısımları*/
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin:0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#585858;
+    letter-spacing: 1px;
+}
+
+/*search-arama girişi*/
+.search{
+    width: 250px;
+    height: 40px;
+    background-color: rgba(245,245,245,0.8);
+    display: flex;
+    justify-content: center; /*yatay eksende ortada hizalar*/
+    align-items: center;
+    border-radius: 20px;
+    padding:0px 20px;
+}
+
+.search input{
+    width: 100%;
+    height: 30px;
+    border: none;  /*borderın gözükmesini engelledik*/
+    outline:none;  /* metin girişindeki dış çizgi kaldırılır*/
+    background-color: transparent;
+
+}
+.search i{
+    color:#530cd8;  /*arama iconu rengi*/
+}
+
+/*navbar listehoverı*/
+nav .menu li a:hover{
+    background-color: #5f4386ea;
+    border-radius: 20px;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px #c99bec;
+    transition:all ease 0.2s;  /*ögenin tüm özellikleri değişir, başta yavaş ortada hızlı sonda yavaş geçiş, geçiş süresi 0.2 sn*/
+}
+
+
+/*slider için main sınıfı*/
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;  /*rgba(151,151,151,0.03);*/
+}
+
+/*slider için gösterilen kutular*/
+.showcase-box{
+    width: 430px;
+    height: 250px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);  /*x , y, bulanıklık, renk*/
+    border-radius: 10px;
+    margin: 0px 20px 10px 20px;
+    overflow: hidden;
+
+}
+
+.showcase-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /*resmin üstü, içeriğin kutusunun üstüyle hizalanır ve taşma durumunda içeriğin geri kalanı aşağıda konumlandırılır*/
+
+}
+
+/*Popülerler başlığı*/
+.showcase-heading{
+    padding-left: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.5rem;  /* font boyutunu, kök elementin font boyutunun 1.5 katı olarak ayarlar. */
+    color: #212020;
+    padding: 5px 20px;
+    width: 100%;
+    
+}
+
+.cs-hidden{
+    overflow: visible !important;
+
+}
+
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 40px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 15px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    height: 370px;
+    background-color: #ffffff;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+    box-sizing: border-box;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.latest-b-text strong{
+    color:#3a3a3a;
+    margin: 0px;
+    text-align: center;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+
+#autoWidth2 {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.controls {
+    text-align: center;
+}
+
+
+
+/*Filmlere Bakalım kısmı*/
+.movies-heading h2{
+    font-weight: 500;
+    margin: 1px;  /*öğenin dört kenarına 1 piksellik dış boşluk ekler.*/
+    padding: 6px 20px;   /*üst kenarı ve alt kenarı ile iç sınırları arasında 5 piksellik bir boşluk bırakılır.*/
+    width: 100%;
+    background-color: transparent;
+    
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    
+   
+}
+
+.movies-heading{
+    display: flex;
+    margin: 0px 2%; /*öğenin sol ve sağ kenarlarında 0 piksel, üst ve alt kenarlarında ise genişliğinin %2'si kadar bir boşluk */
+
+}
+
+
+/*FİLM KUTUSU AYARIM */
+.movies-box{
+    width:300px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;  /*bir konteyner içindeki öğeleri yatayda düzenlerken, bu öğeler arasında boşluk bırakarak konteynerin 
+    tam genişliğini doldurur. Bu kural, öğeleri konteynerin başlangıç noktası ile bitiş noktası arasında eşit aralıklarla dağıtarak boşluk bırakır.*/
+    align-items: center;
+    flex-direction: column;  /*kutular br sütun gibi dizilir*/
+    box-shadow:2px 2px 30px rgba(0,0,0,0.2) ;  /*2px x ekseninde, 2px y ekseninde kayar, 30px bulanıklık miktarı, 0.2 ile siyahı hafif saydamlaştırır*/
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    border-top: 2px solid #4a4848;
+
+}
+.movies-img{
+    width: 100%;
+    height: 436px;
+    position: relative;
+
+}
+
+.movies-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor:pointer;
+}
+
+.movies-box a{
+    text-align: center;
+    display: flex;  /*block olursa alt alta gibi*/
+    font-weight: 600;
+    display: -webkit-box; /* metnin satırlara bölünmeden önce bir kutu içinde sığdırılmasına izin verir.
+    max-width: 80%;
+    -webkit-line-clamp: vertical; /*metin belirlenen sayıda satırdan fazla uzandığında, aşan kısmı kesilir */
+    overflow:visible;             /* Taşan içeriği gizle */
+    text-overflow: ellipsis;      /* Taşan metni "..." ile göster */
+    color: #212020;
+    margin: 10px;
+
+
+}
+
+.movies-box:hover{
+    transform: translateY(-10px); /*yatay eksende (-Yön) dikey olarak 10 piksel yukarı kaydırılmasını sağlar*/
+    transition: all; /*tüm css özelliklere geçiş efekti uygulanır*/
+}
+
+#film-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /*flex öğelerinin, tek bir satıra sığamadıkları durumda, bir sonraki satıra geçmelerini sağlar*/
+
+}
+
+/* Popup Container */
+.popup-container{
+    display:flex;
+    position:fixed; /*relative falan yaparsam ortada gözükse bile arka plan rengini alarak baskınlaşıyor*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Popup Content */
+.popup-container .content {
+    display: flex;
+    background: #ebeeef;
+    border-radius: 10px;
+    overflow: auto;  /*içerik pencerenin boyutlarından büyükse, bu stil içeriğin içinde kaydırma çubuklarını görüntülemesine izin verir.*/
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%;
+    height: auto;
+    position: relative;
+  
+    
+}
+
+/*popupın sol ve sağ tarafı*/
+.popup-container .left {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+   
+}
+
+.popup-container .right {
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Popup Close, x  Icon */
+.popup-container .x-icon {
+    position: absolute;
+    top: 29px;
+    right: 260px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc3c3;
+   z-index: 1001;
+  
+}
+
+.popup-container .x-icon i {
+    font-size: 24px; /* Font Awesome ikon boyutu */
+    color: #3f5de3; /* Kapatma ikonu rengi */
+    cursor: pointer;
+    
+}
+
+/* Hover efekti eklemek için */
+.x-icon i:hover {
+   
+    color: #7f9efb; /* Hover sırasında ikon rengi */
+}
+
+/*popup içindeki sol taraftaki resim, poster*/
+.poster-img {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem rgb(147, 137, 137);  /*ilk 0 x yani yatay eksen, ikinci 0 y ekseni, .5rem 0.5 bulanıklık demek, diğeri de gölge rengi*/
+    border: 1px solid rgb(149, 149, 149);  /* 1px kenarlığın kalınlığı, solid düz çizgi olduğunu belirtir ve kenarlık rengi*/ 
+}
+.poster-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*img'ın boyutunu koruyarak etkiet içinde hizalar. cover ile içeriği orantılar ve etiketin tamamını kaplayacak şekilde
+    görünmesini sağlar*/
+}
+
+
+/* Popup Title, Başlığı */
+.popup-container h1 {
+    font-size: 30px;
+    margin-bottom: 10px; /*alt kenar boşluğunu belirliyor */
+}
+
+/*popup tagline,yönetmen,konusu başlıkları*/
+
+.popup-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup-container .genres ul {
+    font-size: 15px;
+    margin-bottom: 6px;
+    list-style: disc; /* disk şeklinde madde işareti */
+}
+
+
+/* Popup Overview, Konu */
+.popup-container .overview p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/*popup yönetmen*/
+.popup-container .director p{
+    display: flex;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/*popup favoriye ekleme*/
+.popup-container .addfavourite {
+    font-weight: 600;
+    color: #333;
+}
+
+/*film dili ve süresi bilgileri*/
+.popup-container #popupInfoContainer{
+    font-size: 15px;
+}
+
+/*yıldız iconu*/
+.star-icon {
+    font-size: 2rem;
+    user-select:none; /*kesme kopyalama yapamaz*/
+    cursor: pointer;
+    color: #b0bbec; /* Star rengi */
+    transition: color 0.5s, transform 0.5s;  /*color için 0.5 snlik değişiklik ve transform özelliği için 0.5 saniyelik değişiklik uygulanır*/
+  }
+  
+  .star-icon:hover {
+    color: #3f5de3; /* Hover rengi */
+    transform: scale(1.1);  /*boyutu (genişlik ve yükseklik) %110 arttırdı. 0.9 olsa %10 küçülür*/
+  }
+  
+  .star-icon.is-active {
+    color: gold; /* Aktif rengi */
+    transform: scale(1.3);
+}
+
+.single-info .addfavourite{
+    font-size: 18px;
+}
+
+/*footer*/
+.footer-section {
+    width: 100%;
+    background-color:transparent; 
+    color:#363ab7;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;  /*öğeleri dikey eksende (yatay eksene göre) ortalar.*/
+    justify-content: space-around; /*içerideki öğeleri yatay eksende ortalar ve aralarına eşit boşluk bırakır.*/
+
+  }
+  
+
+
